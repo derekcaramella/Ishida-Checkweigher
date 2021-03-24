@@ -42,7 +42,7 @@ while second <= 5:
         # Checksum: A digit representing the sum of the correct digits in a piece of stored or transmitted digital data.
         check_sum = line[11:13]
         second += 5  # Exit loop
-        database_tuple = (weight_status_dic[command[1]], weight, unit_of_measure, check_sum)  # Construct instance.
+        database_tuple = (workstation, weight_status_dic[command[1]], weight, unit_of_measure, check_sum)  # Construct instance.
         cursor.execute('USE [Operations] INSERT INTO [dbo].[Ishida Weights] VALUES ' + str(database_tuple))
         con.commit()
     else:
