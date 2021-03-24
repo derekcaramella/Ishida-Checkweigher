@@ -1,4 +1,5 @@
 import serial
+from datetime import datetime
 import time
 import pyodbc
 import settings
@@ -12,6 +13,7 @@ con = pyodbc.connect(Trusted_Connection='no',
 cursor = con.cursor()
 
 workstation = 'Sig 1'  # Identify workstation.
+timestamp = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M')
 
 # Ensure baud rate, parity, stop bits, and byte size are congruent with the Ishida data transfer protocol.
 ser = serial.Serial(port='/dev/ttyUSB0',
@@ -42,7 +44,7 @@ while second <= 5:
         # Checksum: A digit representing the sum of the correct digits in a piece of stored or transmitted digital data.
         check_sum = line[11:13]
         second += 5  # Exit loop
-        database_tuple = (workstation, weight_status_dic[command[1]], weight, unit_of_measure, check_sum)  # Construct instance.
+        database_tuple = (timestamp, workstation, weight_status_dic[command[1]], weight, unit_of_measure, check_sum)  # Construct instance.
         cursor.execute('USE [Operations] INSERT INTO [dbo].[Ishida Weights] VALUES ' + str(database_tuple))
         con.commit()
     else:
