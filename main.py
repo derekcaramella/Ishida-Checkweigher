@@ -43,7 +43,7 @@ while second <= 5:
         check_sum = line[11:13]
         second += 5  # Exit loop
         database_tuple = (weight_status_dic[command[1]], weight, unit_of_measure, check_sum)  # Construct instance.
-        cursor.execute('USE [Alpha_Live] INSERT INTO [dbo].[Ishida Weights] VALUES ' + str(database_tuple))
+        cursor.execute('USE [Operations] INSERT INTO [dbo].[Ishida Weights] VALUES ' + str(database_tuple))
         con.commit()
     else:
         time.sleep(1)  # Wait one second before trying again.
