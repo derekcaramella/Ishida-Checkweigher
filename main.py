@@ -1,10 +1,10 @@
 import serial
 from datetime import datetime
 import time
-import pyodbc
+import pymssql
 import settings
 
-con = pyodbc.connect(Trusted_Connection='no',
+con = pymssql.connect(Trusted_Connection='no',
                      driver='{SQL Server}',
                      server=settings.database_ip,
                      database='Operations',
