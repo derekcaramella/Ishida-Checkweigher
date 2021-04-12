@@ -7,7 +7,7 @@ import settings
 con = pyodbc.connect(Trusted_Connection='no',
                      driver='{SQL Server}',
                      server=settings.database_ip,
-                     database='Alpha_Live',
+                     database='Operations',
                      UID=settings.database_id,
                      PWD=settings.database_password)
 cursor = con.cursor()
@@ -45,7 +45,7 @@ while second <= 5:
         check_sum = line[11:13]
         second += 5  # Exit loop
         database_tuple = (timestamp, workstation, weight_status_dic[command[1]], weight, unit_of_measure, check_sum)  # Construct instance.
-        cursor.execute('USE [Operations] INSERT INTO [dbo].[Ishida Weights] VALUES ' + str(database_tuple))
+        cursor.execute('USE [Operations] INSERT INTO [dbo].[Ishida_Weights] VALUES ' + str(database_tuple))
         con.commit()
     else:
         time.sleep(1)  # Wait one second before trying again.
