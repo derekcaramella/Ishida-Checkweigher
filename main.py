@@ -1,7 +1,7 @@
 import serial
 from datetime import datetime
 import time
-import pyodbc
+import pyodbc  # How to install on Raspberry Pi?
 import settings
 
 con = pyodbc.connect(Trusted_Connection='no',
