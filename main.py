@@ -4,10 +4,12 @@ import time
 import pymssql
 import settings
 
-con = pymssql.connect(server=settings.database_ip,
-                      database='Operations',
-                      user=settings.database_id,
-                      password=settings.database_password)
+con = pyodbc.connect(Trusted_Connection='no',
+                     driver='{SQL Server}',
+                     server=settings.database_ip,
+                     database='Alpha_Live',
+                     UID=settings.database_id,
+                     PWD=settings.database_password)
 cursor = con.cursor()
 
 workstation = 'Sig 1'  # Identify workstation.
