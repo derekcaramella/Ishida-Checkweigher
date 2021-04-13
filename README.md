@@ -8,4 +8,4 @@ DACS-G Ishida Checkweigher can send data through Modbus and RS-232 connections. 
 <li>Female/Male Null modem adapter</li>
 
 ### Scheduling Scrapping Script
-Cron is a tool for configuring scheduled tasks on Unix systems. Find cron <a href='https://www.raspberrypi.org/documentation/linux/usage/cron.md'> documentation</a> for implementation.
+Cron is a tool for configuring scheduled tasks on Unix systems. Find cron <a href='https://www.raspberrypi.org/documentation/linux/usage/cron.md'> documentation</a> for implementation. Moreover, here are some <a href='https://crontab.guru/'> examples</a> for launch.
