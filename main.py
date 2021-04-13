@@ -7,7 +7,7 @@ import settings
 con = pyodbc.connect(Trusted_Connection='no',
                      driver='{SQL Server}',
                      server=settings.database_ip,
-                     database='Alpha_Live',
+                     database='Operations',
                      UID=settings.database_id,
                      PWD=settings.database_password)
 cursor = con.cursor()
