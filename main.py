@@ -1,7 +1,7 @@
 import serial
 from datetime import datetime
 import time
-import pymssql
+import pyodbc
 import settings
 
 con = pyodbc.connect(Trusted_Connection='no',
