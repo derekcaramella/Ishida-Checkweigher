@@ -1,15 +1,13 @@
 import serial
 from datetime import datetime
 import time
-import pyodbc
+import pymssql
 import settings
 
-con = pyodbc.connect(Trusted_Connection='no',
-                     driver='{SQL Server}',
-                     server=settings.database_ip,
-                     database='Operations',
-                     UID=settings.database_id,
-                     PWD=settings.database_password)
+con = pymssql.connect(server=settings.database_ip,
+                      database='Operations',
+                      user=settings.database_id,
+                      password=settings.database_password)
 cursor = con.cursor()
 
 workstation = 'Sig 1'  # Identify workstation.
